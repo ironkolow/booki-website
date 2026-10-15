@@ -1,0 +1,74 @@
+Here is the desktop page structure. The arrows show the direction of each block's children (→ horizontal, ↓ vertical).
+
+1. **`<header>`** →
+   - Logo: `<a>` containing an `<img>`
+   - `<nav>` containing `<ul>` →
+     - `<li><a>` Accommodation (active, blue top border)
+     - `<li><a>` Things to Do
+
+2. **`<main>`** ↓
+
+   1. **Intro and search block** ↓
+      - `<h1>` "Find a place to stay for your dream vacation"
+      - `<p>` "In the heart of the city or surrounded by nature"
+      - `<form>` search →
+        - Location pin icon
+        - `<input>` "Marseille, France"
+        - `<button>` "Search" (becomes a magnifier icon on mobile)
+
+   2. **Filters** →
+      - `<p>` or `<span>` "Filters"
+      - `<button>` Budget (icon + text)
+      - `<button>` Family-Friendly (icon + text)
+      - `<button>` Romantic (icon + text)
+      - `<button>` Our Top Picks (icon + text)
+
+   3. **Info line** →
+      - Info icon
+      - `<p>` "There are over 500 available places to stay in this city"
+
+   4. **Two-column wrapper** →
+
+      1. **`<section>` Marseille Accommodation** (wide column) ↓
+         - `<h2>` "Marseille Accommodation"
+         - Cards grid, 3 columns × 2 rows
+           - 6 × `<article>` ↓
+             - `<img>`
+             - `<h3>` hotel name
+             - `<p>` "Starting at $XX/night"
+             - Star rating (4 filled, 1 empty)
+         - `<a>` "Show more"
+
+      2. **`<section>` Most Popular** (narrow column) ↓
+         - Title row →
+           - `<h2>` "Most Popular"
+           - Chart icon
+         - 3 × `<article>` →
+           - `<img>` (left)
+           - Text block ↓
+             - `<h3>` hotel name
+             - `<p>` "Starting at $XX/night"
+             - Star rating
+
+   5. **`<section>` Things to Do in Marseille** ↓
+      - `<h2>` "Things to Do in Marseille"
+      - 4 equal-height cards →
+        - 4 × `<article>` ↓
+          - `<img>`
+          - `<h3>` The Old Port, Fort of Pomègues, Calanques National Park, Notre-Dame de la Garde
+
+3. **`<footer>`** → (3 equal columns)
+   - `<div>` About ↓
+     - `<h3>` About
+     - `<ul>` with `<li><a>` Using the Website, Terms and Conditions, Data and Privacy
+   - `<div>` Our Accommodation ↓
+     - `<h3>` Our Accommodation
+     - `<ul>` with `<li><a>` Our Quality Promise, Add Your Hotel
+   - `<div>` Support ↓
+     - `<h3>` Support
+     - `<ul>` with `<li><a>` Help Center, Contact Us
+
+## Notes
+- **Direction rule:** sections that mix directions have wrapper elements inside them, such as the grid inside the Accommodation section and the text block inside each Most Popular card. This keeps every block going one way.
+- **Tablet:** Most Popular moves below Accommodation and shows 3 cards in a row, so the two-column wrapper becomes a single column.
+- **Mobile:** the header stacks, with the logo centered and the nav below it. The filters wrap into a 2×2 layout and all the cards stack in one column.
