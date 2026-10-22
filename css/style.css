@@ -16,12 +16,15 @@
 body {
     display: flex;
     justify-content: center;
+    min-width: 320px;
+
 }
 
 .main-container {
     width: 100%;
     padding: 0 50px;
     box-sizing: border-box;
+    max-width: 1440px;
 }
 
 .section-title {
@@ -388,4 +391,169 @@ footer {
     color: #000;
     font-size: 18px;
     text-decoration: none;
+}
+
+@media (max-width: 1024px) {
+    .filters {
+        flex-wrap: wrap;
+    }
+
+    .filters-title {
+        width: 100%;
+    }
+
+    .filter-button {
+        font-size: 14px;
+    }
+
+    /* Accommodation on top, Most Popular below, both full width */
+    .accommodation-and-popular {
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    .accommodation,
+    .popular {
+        width: 100%;
+    }
+
+    /* Most Popular cards in a row of 3 */
+    .popular-cards {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .popular-cards .card {
+        width: 31%;
+        box-sizing: border-box;
+    }
+
+    .activity-card img {
+        height: 200px;
+    }
+}
+@media (max-width: 767px) {
+    .main-container {
+        padding: 0;
+    }
+
+    /* Header: logo centered, nav in two equal halves, border underneath */
+    header {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .logo {
+        margin: 20px auto 10px;
+    }
+
+    nav {
+        border-bottom: 1px solid #E8E8E8;
+    }
+
+    nav ul {
+        gap: 0;
+    }
+
+    nav li {
+        flex: 1;
+    }
+
+    nav a {
+        text-align: center;
+        border-top: none;
+        border-bottom: 3px solid transparent;
+    }
+
+    nav a:hover,
+    nav a.active {
+        border-top-color: transparent;
+        border-bottom-color: var(--main-color);
+    }
+
+    /* Intro, search, filters, info: side spacing */
+    .search-intro,
+    .filters,
+    .info {
+        padding: 0 20px;
+    }
+
+    .search-form {
+        width: auto;
+        margin: 32px 20px 0;
+    }
+
+    .search-button-text {
+        display: none;
+    }
+
+    .search-button-icon {
+        display: inline;
+    }
+
+    /* Filters in a 2x2 grid */
+    .filters {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+    }
+
+    .filters-title {
+        grid-column: 1 / -1;
+    }
+
+    /* Most Popular first (gray, full width), Accommodation below (white) */
+    .accommodation-and-popular {
+        flex-direction: column-reverse;
+        gap: 0;
+    }
+
+    .accommodation-and-popular section {
+        border-radius: 0;
+        padding: 20px;
+    }
+
+    .accommodation {
+        background-color: transparent;
+    }
+
+    .popular-cards {
+        display: block;
+    }
+
+    .popular-cards .card {
+        width: 100%;
+    }
+
+    /* Cards in one column */
+    .accommodation-cards {
+        flex-direction: column;
+        row-gap: 20px;
+    }
+
+    .accommodation-cards .card {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .activities-cards {
+        flex-direction: column;
+        row-gap: 20px;
+    }
+
+    .activity-card {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .activity-card img {
+        height: 140px;
+    }
+
+    /* Footer: columns stacked */
+    footer {
+        flex-direction: column;
+        gap: 40px;
+        padding: 30px;
+    }
 }
