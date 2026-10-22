@@ -355,3 +355,37 @@ nav a.active {
     margin: 0;
     padding: 18px 14px;
 }
+
+/****** Footer ***********/
+footer {
+    display: flex;
+    margin-top: 60px;
+    padding: 20px;
+    background-color: var(--main-bg-color);
+    box-sizing: border-box;
+}
+
+.footer-column {
+    flex: 1;
+}
+
+.footer-title {
+    margin: 0;
+    font-size: 18px;
+}
+
+.footer-column ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.footer-column li {
+    margin-top: 14px;
+}
+
+.footer-column a {
+    color: #000;
+    font-size: 18px;
+    text-decoration: none;
+}
