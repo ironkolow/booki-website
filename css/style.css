@@ -448,10 +448,12 @@ footer {
     }
 
     nav {
-        border-bottom: 1px solid #E8E8E8;
+    width: 100%;
+    border-bottom: 1px solid #E8E8E8;
     }
 
     nav ul {
+        width: 100%;
         gap: 0;
     }
 
@@ -467,7 +469,6 @@ footer {
 
     nav a:hover,
     nav a.active {
-        border-top-color: transparent;
         border-bottom-color: var(--main-color);
     }
 
@@ -556,4 +557,7 @@ footer {
         gap: 40px;
         padding: 30px;
     }
+}
+html {
+    scroll-behavior: smooth;
 }
