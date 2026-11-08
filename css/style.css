@@ -17,7 +17,7 @@ body {
     display: flex;
     justify-content: center;
     min-width: 320px;
-
+    margin: 0;
 }
 
 .main-container {
@@ -137,55 +137,41 @@ body {
 .popular-cards .card-rating {
     margin-bottom: 5px;
 }
-body {
-  margin: 0; /* body has a default margin */
-  font-family: "Raleway", sans-serif;
-}
-
+/****** Header ***********/
 header {
-  display: flex;
-  justify-content: space-between; /* logo left, nav right */
-  align-items: center;
-  padding: 0 50px;
+    display: flex;
+    justify-content: space-between; /* logo left, nav right */
+    align-items: center;
 }
 
 .logo img {
-  height: 24px; /* adjust to match the mock-up */
+    height: 24px;
 }
 
 nav ul {
-  display: flex; /* links side by side */
-  list-style: none; /* remove bullets */
-  margin: 0;
-  padding: 0; /* ul has default padding */
+    display: flex;
+    gap: 68px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 nav a {
-  display: block;
-  padding: 18px 25px;
-  border-top: 3px solid transparent; /* reserved space, so nothing jumps on hover */
-  color: #000;
-  text-decoration: none;
+    display: block;
+    padding: 12px 0;
+    border-top: 3px solid transparent; /* reserved space, so nothing jumps on hover */
+    color: #000;
+    text-decoration: none;
+    white-space: nowrap;
 }
 
 nav a:hover,
 nav a.active {
-  color: #0065fc; /* use the exact blue from the mock-up */
-  border-top-color: #0065fc;
+    color: var(--main-color);
+    border-top-color: var(--main-color);
 }
 
-   header {
-     display: flex;
-     justify-content: space-between;
-     align-items: center;
-     padding: 0 50px;
-   }
-
-   nav a {
-     white-space: nowrap;
-   }
-
-   /****** Search ***********/
+/****** Search ***********/
 .search-intro {
     margin-top: 40px;
 }
@@ -292,6 +278,7 @@ nav a.active {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-shrink: 0;
     width: 24px;
     height: 24px;
     border: 1px solid #D9D9D9;
@@ -495,12 +482,25 @@ footer {
     /* Filters in a 2x2 grid */
     .filters {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 15px;
     }
 
     .filters-title {
         grid-column: 1 / -1;
+    }
+
+    .filter-button {
+        height: auto;
+        min-height: 50px;
+        padding: 6px 12px;
+        gap: 8px;
+        text-align: left;
+        line-height: 1.2;
+    }
+
+    .filter-button i {
+        flex-shrink: 0;
     }
 
     /* Most Popular first (gray, full width), Accommodation below (white) */
@@ -514,8 +514,8 @@ footer {
         padding: 20px;
     }
 
-    .accommodation {
-        background-color: transparent;
+    .accommodation-and-popular .accommodation {
+        background-color: white;
     }
 
     .popular-cards {
